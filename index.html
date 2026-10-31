@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodieExpress | Delicious Food Delivered to Your Door</title>
+  <meta name="description" content="FoodieExpress delivers fresh, hot meals from local kitchens to your door." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-white font-sans text-stone-800 antialiased">
+
+  <!-- 1. NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#home" class="font-display text-2xl font-extrabold text-orange-600">🍔 FoodieExpress</a>
+
+      <!-- Desktop links -->
+      <ul class="hidden items-center gap-8 font-medium md:flex">
+        <li><a href="#home" class="transition hover:text-orange-600">Home</a></li>
+        <li><a href="#menu" class="transition hover:text-orange-600">Menu</a></li>
+        <li><a href="#about" class="transition hover:text-orange-600">About</a></li>
+        <li><a href="#contact" class="transition hover:text-orange-600">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="#menu" class="hidden rounded-full bg-orange-600 px-5 py-2 font-semibold text-white transition hover:bg-orange-700 hover:shadow-lg sm:inline-block">Order Now</a>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="rounded-lg p-2 text-2xl leading-none transition hover:bg-stone-100 md:hidden">☰</button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-stone-200 bg-white md:hidden">
+      <ul class="flex flex-col gap-1 px-4 py-3 font-medium">
+        <li><a href="#home" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-600">Home</a></li>
+        <li><a href="#menu" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-600">Menu</a></li>
+        <li><a href="#about" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-600">About</a></li>
+        <li><a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-600">Contact</a></li>
+        <li><a href="#menu" class="mt-2 block rounded-full bg-orange-600 px-3 py-2 text-center font-semibold text-white hover:bg-orange-700">Order Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO -->
+    <section id="home" class="bg-orange-50">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20 lg:px-8">
+        <div class="text-center md:text-left">
+          <h1 class="font-display text-4xl font-extrabold leading-tight text-stone-900 sm:text-5xl lg:text-6xl">
+            Delicious Food Delivered to Your Door.
+          </h1>
+          <p class="mx-auto mt-5 max-w-md text-lg text-stone-600 md:mx-0">
+            Hot meals from the best local kitchens, at your table in 30 minutes or less. Pick what you crave and we handle the rest.
+          </p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
+            <a href="#menu" class="rounded-full bg-orange-600 px-8 py-3 text-center font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-orange-700 hover:shadow-xl">Explore Menu</a>
+            <a href="#offer" class="rounded-full border-2 border-stone-900 px-8 py-3 text-center font-semibold text-stone-900 transition hover:bg-stone-900 hover:text-white">See Today's Offer</a>
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-3xl bg-orange-200 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80"
+               alt="A table full of freshly cooked dishes"
+               class="h-72 w-full object-cover sm:h-96 md:h-[28rem]"
+               onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BONUS: Categories -->
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl font-bold text-stone-900 sm:text-3xl">Browse by category</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <a href="#menu" class="flex flex-col items-center gap-2 rounded-2xl border border-stone-200 p-5 transition hover:-translate-y-1 hover:border-orange-400 hover:shadow-lg">
+          <span class="text-4xl">🍕</span><span class="font-semibold">Pizza</span>
+        </a>
+        <a href="#menu" class="flex flex-col items-center gap-2 rounded-2xl border border-stone-200 p-5 transition hover:-translate-y-1 hover:border-orange-400 hover:shadow-lg">
+          <span class="text-4xl">🍔</span><span class="font-semibold">Burger</span>
+        </a>
+        <a href="#menu" class="flex flex-col items-center gap-2 rounded-2xl border border-stone-200 p-5 transition hover:-translate-y-1 hover:border-orange-400 hover:shadow-lg">
+          <span class="text-4xl">🥗</span><span class="font-semibold">Salad</span>
+        </a>
+        <a href="#menu" class="flex flex-col items-center gap-2 rounded-2xl border border-stone-200 p-5 transition hover:-translate-y-1 hover:border-orange-400 hover:shadow-lg">
+          <span class="text-4xl">🥤</span><span class="font-semibold">Drinks</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. POPULAR DISHES -->
+    <section id="menu" class="bg-stone-50">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 class="font-display text-3xl font-bold text-stone-900 sm:text-4xl">Popular dishes</h2>
+        <p class="mt-2 max-w-xl text-stone-600">The meals our customers order again and again.</p>
+
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Card 1 (with discount badge) -->
+          <article class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <span class="absolute left-3 top-3 z-10 rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white">20% OFF</span>
+            <div class="h-52 overflow-hidden bg-orange-100">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                   alt="Double beef cheeseburger" class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                   onerror="this.style.display='none'" />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-display text-xl font-bold">Classic Beef Burger</h3>
+              <p class="mt-2 flex-1 text-stone-600">Juicy beef patty, melted cheese, crisp lettuce and our house sauce in a toasted bun.</p>
+              <div class="mt-5 flex items-center justify-between">
+                <p class="text-xl font-bold text-orange-600">$8.99 <span class="ml-1 text-sm font-medium text-stone-400 line-through">$11.25</span></p>
+                <a href="#" class="rounded-full bg-orange-600 px-5 py-2 font-semibold text-white transition hover:bg-orange-700 hover:shadow-lg">Order Now</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="h-52 overflow-hidden bg-orange-100">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+                   alt="Wood-fired pizza with fresh toppings" class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                   onerror="this.style.display='none'" />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-display text-xl font-bold">Veggie Supreme Pizza</h3>
+              <p class="mt-2 flex-1 text-stone-600">Thin crust loaded with peppers, olives, mushrooms and mozzarella, baked to order.</p>
+              <div class="mt-5 flex items-center justify-between">
+                <p class="text-xl font-bold text-orange-600">$12.50</p>
+                <a href="#" class="rounded-full bg-orange-600 px-5 py-2 font-semibold text-white transition hover:bg-orange-700 hover:shadow-lg">Order Now</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-2xl sm:col-span-2 lg:col-span-1">
+            <div class="h-52 overflow-hidden bg-orange-100">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
+                   alt="Colorful fresh salad bowl" class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                   onerror="this.style.display='none'" />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-display text-xl font-bold">Garden Fresh Bowl</h3>
+              <p class="mt-2 flex-1 text-stone-600">Grilled chicken, avocado, cherry tomatoes and greens with a light lemon dressing.</p>
+              <div class="mt-5 flex items-center justify-between">
+                <p class="text-xl font-bold text-orange-600">$9.75</p>
+                <a href="#" class="rounded-full bg-orange-600 px-5 py-2 font-semibold text-white transition hover:bg-orange-700 hover:shadow-lg">Order Now</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. WHY CHOOSE US -->
+    <section id="about" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-center font-display text-3xl font-bold text-stone-900 sm:text-4xl">Why choose FoodieExpress?</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-stone-200 p-8 text-center transition hover:border-orange-400 hover:shadow-lg">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">🚴</div>
+          <h3 class="mt-5 font-display text-xl font-bold">Fast Delivery</h3>
+          <p class="mt-2 text-stone-600">Your order arrives hot in 30 minutes or less, tracked from kitchen to door.</p>
+        </div>
+        <div class="rounded-2xl border border-stone-200 p-8 text-center transition hover:border-orange-400 hover:shadow-lg">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">🥬</div>
+          <h3 class="mt-5 font-display text-xl font-bold">Fresh Ingredients</h3>
+          <p class="mt-2 text-stone-600">Every dish is cooked the moment you order, using produce delivered daily.</p>
+        </div>
+        <div class="rounded-2xl border border-stone-200 p-8 text-center transition hover:border-orange-400 hover:shadow-lg">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">💰</div>
+          <h3 class="mt-5 font-display text-xl font-bold">Affordable Prices</h3>
+          <p class="mt-2 text-stone-600">Restaurant-quality meals with no hidden fees and deals every week.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SPECIAL OFFER -->
+    <section id="offer" class="px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 rounded-3xl bg-stone-900 px-6 py-14 text-center text-white sm:px-12">
+        <h2 class="font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">Get 20% Off Your First Order!</h2>
+        <p class="max-w-xl text-stone-300">Sign up today and enjoy 20% off any meal on the menu. No minimum spend, and delivery is on us.</p>
+        <a href="#" class="rounded-full bg-orange-500 px-10 py-3 font-semibold text-white transition hover:scale-105 hover:bg-orange-400 hover:shadow-xl">Claim Offer</a>
+      </div>
+    </section>
+
+    <!-- BONUS: Reviews -->
+    <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-bold text-stone-900 sm:text-4xl">What our customers say</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <figure class="rounded-2xl bg-orange-50 p-6 transition hover:shadow-lg">
+          <p class="text-amber-500">★★★★★</p>
+          <blockquote class="mt-3 text-stone-700">The burger arrived hot and the delivery took only 25 minutes. Easily my go-to for weeknight dinners.</blockquote>
+          <figcaption class="mt-4 font-semibold">Rafi Ahmed</figcaption>
+        </figure>
+        <figure class="rounded-2xl bg-orange-50 p-6 transition hover:shadow-lg">
+          <p class="text-amber-500">★★★★★</p>
+          <blockquote class="mt-3 text-stone-700">Fresh ingredients and fair prices. The first-order discount made trying it a no-brainer.</blockquote>
+          <figcaption class="mt-4 font-semibold">Nusrat Jahan</figcaption>
+        </figure>
+        <figure class="rounded-2xl bg-orange-50 p-6 transition hover:shadow-lg">
+          <p class="text-amber-500">★★★★☆</p>
+          <blockquote class="mt-3 text-stone-700">Great variety on the menu and the app is simple to use. The pizza is my favourite.</blockquote>
+          <figcaption class="mt-4 font-semibold">Tanvir Hasan</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer id="contact" class="bg-stone-900 text-stone-300">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-10 text-center sm:px-6 md:flex-row md:justify-between md:text-left lg:px-8">
+      <div>
+        <p class="font-display text-2xl font-extrabold text-white">🍔 FoodieExpress</p>
+        <p class="mt-1 text-sm">&copy; 2026 FoodieExpress. All rights reserved.</p>
+      </div>
+      <ul class="flex gap-6 font-medium">
+        <li><a href="https://facebook.com" target="_blank" rel="noopener" class="transition hover:text-orange-400">Facebook</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener" class="transition hover:text-orange-400">Instagram</a></li>
+        <li><a href="https://x.com" target="_blank" rel="noopener" class="transition hover:text-orange-400">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? '✕' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', false);
+      btn.textContent = '☰';
+    }));
+  </script>
+</body>
+</html>
